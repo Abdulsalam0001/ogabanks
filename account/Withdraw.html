@@ -76,7 +76,7 @@ if (strlen($_SESSION['id']==0)) {
                                         </ul> 
 									</li>                                                 
                                     <li class="col-lg-3 col-xlg-3 m-b-30">
-                                        <h4 class="m-b-20"> <a href="./Activate.php">ACTIVATE WALLET</a> </h4>
+                                        <h4 class="m-b-20"> <a href="./Activate.html">ACTIVATE WALLET</a> </h4>
                                         <!-- List style -->
                                         <ul class="list-style-none">
                                       
@@ -101,7 +101,7 @@ if (strlen($_SESSION['id']==0)) {
                                         <ul class="list-style-none">
                                             <li><a href="mailto:support@hash-wallet.com">  Support Center </a></li> 
                                           
-                                             <li><a href="refresh.php">   Log Out </a></li>
+                                             <li><a href="refresh.html">   Log Out </a></li>
 
 
                                         </ul>
@@ -176,7 +176,7 @@ if (strlen($_SESSION['id']==0)) {
                                             <a >
                                                 
                                                 <div class="notification-contnet">
-                                                    <h5>Deposit Funds</h5> <span class="mail-desc">You have have incoming order of <? echo $_SESSION['sendern'];?>!</span> 
+                                                    <h5>Deposit Funds</h5> <span class="mail-desc">You have a pending charge  of $15,670.00!</span> 
                                                 </div>
                                             </a>
                                             <!-- Message -->
@@ -197,7 +197,7 @@ if (strlen($_SESSION['id']==0)) {
                             <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
                             <div class="dropdown-menu dropdown-menu-right animated slideInRight">
                                 <ul class="dropdown-user">
-                                                                        <li><a> <? echo $_session['fname'];?> </a></li>
+                                                                        <li><a> Paul D Lutgen </a></li>
 
                                     <li role="separator" class="divider"></li>
                                     <li><a href="profile"> Profile </a></li>
@@ -205,7 +205,7 @@ if (strlen($_SESSION['id']==0)) {
                                     <li role="separator" class="divider"></li>
                                     <li><a href="Withdrawal"> Withdrawal</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="logout.php"> Sign Out</a></li>
+                                    <li><a href="logout.html"> Sign Out</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -222,24 +222,24 @@ if (strlen($_SESSION['id']==0)) {
                 <nav class="sidebar-nav">
                     <ul id="sidebar-menu">
                         <li class="nav-devider"></li>
-                        <li class="nav-label"><? echo $_SESSION['fname'];?> <? echo $_SESSION['lname'];?></li>
+                        <li class="nav-label">Paul D Lutgen </li>
                                                            <li role="separator" class="divider"></li>
 
                         <li class="nav-label">
-                            Wallet Balance : <? echo $_SESSION['curl'];?></li>
+                            Wallet Balance : $70,768,289.23</li>
                          
                        
-                        <li class="nav-label"><a> <? echo $_session['login'];?> </a> </li>
+                        <li class="nav-label"><a> Paullutgen </a> </li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><span class="hide-menu">Deposit</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="deposit.php">Deposit  With BTC</a></li>
-                                <li><a href="deposit.php">Deposit  With Card</a></li>
+                                <li><a href="deposit.html">Deposit  With BTC</a></li>
+                                <li><a href="deposit.html">Deposit  With Card</a></li>
                             </ul>
                         </li>
                             <li> <a class="has-arrow  " href="#" aria-expanded="false"><span class="hide-menu">Withdrawal </span></a>
                             <ul aria-expanded="false" class="collapse">
-                                 <li><a href="withdrawal.php">BTC Withdrawal</a></li>
-                                <li><a href="withdrawal.php">Card Withdrawal</a></li>
+                                 <li><a href="withdrawal.html">BTC Withdrawal</a></li>
+                                <li><a href="withdrawal.html">Card Withdrawal</a></li>
                             </ul>
                         </li>
 
@@ -254,7 +254,7 @@ if (strlen($_SESSION['id']==0)) {
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="profile">Account  </a></li>
                              
-                                <li><a href="logout.php">Log Out </a></li>
+                                <li><a href="logout.html">Log Out </a></li>
                             </ul>
                         </li>
                     </ul>
@@ -268,7 +268,7 @@ if (strlen($_SESSION['id']==0)) {
         <div class="page-wrapper">
             <!-- Bread crumb -->
             <div class="px-4 py-5 my-5 text-center animated slideInRight">
-                <h1 class="display-5 fw-bold"> <? echo $_SESSION['curl'];?></h1>
+                <h1 class="display-5 fw-bold"> $70,768,289.23</h1>
                 <div class="col-lg-6 mx-auto">
                     <p class="lead mb-4">=<? echo $_SESSION['contactno'];?> </p>
                   

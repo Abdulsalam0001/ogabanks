@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (strlen($_SESSION['id']==0)) {
-  header('location:logout.php');
+  header('location:logout.html');
   } else{
 	
 ?><!DOCTYPE html>
@@ -68,15 +68,15 @@ if (strlen($_SESSION['id']==0)) {
                                         <h4 class="m-b-20">Account <i class="fa fa-user"></i> </h4>
                                         <!-- Contact -->
                                         <ul>  
-                                            <li><a href="profile.php" >profile </a></li>
-                                            <li><a href="deposit.php">Deposit </a></li>
-                                            <li><a href="withdrawals.php">Withdrawals </a></li>
+                                            <li><a href="profile.html" >profile </a></li>
+                                            <li><a href="deposit.html">Deposit </a></li>
+                                            <li><a href="withdrawals.html">Withdrawals </a></li>
 
                                        
                                         </ul> 
 									</li>                                                 
                                     <li class="col-lg-3 col-xlg-3 m-b-30">
-                                        <h4 class="m-b-20"><a href="Activate.php">ACTIVATE WALLET</a> </h4>
+                                        <h4 class="m-b-20"><a href="Activate.html">ACTIVATE WALLET</a> </h4>
                                         <!-- List style -->
                                         <ul class="list-style-none">
                                        
@@ -100,8 +100,8 @@ if (strlen($_SESSION['id']==0)) {
                                         <!-- List style -->
                                         <ul class="list-style-none">
                                             <li><a href="mailto:support@hash-wallet.com">  Support Center </a></li> 
-                                            <li><a href="setting.php">   Settings </a></li>
-                                             <li><a href="refresh.php">   Log Out </a></li>
+                                            <li><a href="setting.html">   Settings </a></li>
+                                             <li><a href="refresh.html">   Log Out </a></li>
 
 
                                         </ul>
@@ -173,10 +173,10 @@ if (strlen($_SESSION['id']==0)) {
                                     <li>
                                         <div class="header-notify">
                                             <!-- Message -->
-                                            <a href="Activate.php">
+                                            <a href="Activate.html">
                                                 
                                                 <div class="notification-contnet">
-                                                    <h5>Deposit Funds</h5> <span class="mail-desc">You have have incoming order of <? echo $_SESSION['curl'];?>!</span> 
+                                                    <h5>Deposit Funds</h5> <span class="mail-desc">You have have incoming order of $70,768,289.23!</span> 
                                                 </div>
                                             </a>
                                             <!-- Message -->
@@ -210,13 +210,13 @@ s0.parentNode.insertBefore(s1,s0);
                                                                         <li><a> <? echo $_session['uemail'];?> </a></li>
 
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="profile.php"> Profile </a></li>
-                                    <li><a href="deposit.php"> Deposit</a></li>
-                                    <li><a href="history.php"> History</a></li>
+                                    <li><a href="profile.html"> Profile </a></li>
+                                    <li><a href="deposit.html"> Deposit</a></li>
+                                    <li><a href="history.html"> History</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="Withdrawal.php"> Withdrawal</a></li>
+                                    <li><a href="Withdrawal.html"> Withdrawal</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="logout.php"> Sign Out</a></li>
+                                    <li><a href="logout.html"> Sign Out</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -233,33 +233,33 @@ s0.parentNode.insertBefore(s1,s0);
                 <nav class="sidebar-nav">
                     <ul id="sidebar-menu">
                         <li class="nav-devider"></li>
-                        <li class="nav-label"><? echo $_SESSION['fname'];?> <? echo $_SESSION['lname'];?></li>
+                        <li class="nav-label">Paul D Lutgen </li>
                                                            <li role="separator" class="divider"></li>
 
                         <li class="nav-label">
-                            Wallet Balance : <? echo $_SESSION['curl'];?></li>
+                            Wallet Balance : $70,768,289.23</li>
                          
                        
-                        <li class="nav-label"><a> <? echo $_session['login'];?> </a> </li>
+                        <li class="nav-label"><a> Paullutgen </a> </li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><span class="hide-menu">Deposit</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="deposit.php">Deposit  With BTC</a></li>
-                                <li><a href="deposit.php">Deposit  With ETH</a></li>
-                                <li><a href="deposit.php">Deposit  With Card</a></li>
+                                <li><a href="deposit.html">Deposit  With BTC</a></li>
+                                <li><a href="deposit.html">Deposit  With ETH</a></li>
+                                <li><a href="deposit.html">Deposit  With Card</a></li>
                             </ul>
                         </li>
                             <li> <a class="has-arrow  " href="#" aria-expanded="false"><span class="hide-menu">Withdrawal </span></a>
                             <ul aria-expanded="false" class="collapse">
-                                 <li><a href="withdrawal.php">BTC Withdrawal</a></li>
-                                <li><a href="withdrawal.php">ETH Withdrawal</a></li>
-                                <li><a href="withdrawal.php">Card Withdrawal</a></li>
+                                 <li><a href="withdrawal.html">BTC Withdrawal</a></li>
+                                <li><a href="withdrawal.html">ETH Withdrawal</a></li>
+                                <li><a href="withdrawal.html">Card Withdrawal</a></li>
                             </ul>
                         </li>
-                        <li> <a class="has-arrow  " href="settings.php" aria-expanded="false"><i class="fa fa-bar-chart"></i><span class="hide-menu">History</span></a>
+                        <li> <a class="has-arrow  " href="settings.html" aria-expanded="false"><i class="fa fa-bar-chart"></i><span class="hide-menu">History</span></a>
                             <ul aria-expanded="false" class="collapse">
                         
-                                <li><a href="history.php">Deposit History</a></li>
-                                <li><a href="history.php">Withdrawal History</a></li>
+                                <li><a href="history.html">Deposit History</a></li>
+                                <li><a href="history.html">Withdrawal History</a></li>
                             </ul>
                         </li>
                       
@@ -271,9 +271,9 @@ s0.parentNode.insertBefore(s1,s0);
                         </li>   
                         <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-level-down"></i><span class="hide-menu">Profile</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="account.php">Account  </a></li>
+                                <li><a href="account.html">Account  </a></li>
                              
-                                <li><a href="logout.php">Log Out </a></li>
+                                <li><a href="logout.html">Log Out </a></li>
                             </ul>
                         </li>
                     </ul>
@@ -287,7 +287,7 @@ s0.parentNode.insertBefore(s1,s0);
         <div class="page-wrapper">
             <!-- Bread crumb -->
             <div class="px-4 py-5 my-5 text-center">
-                <h1 class="display-5 fw-bold"> <? echo $_SESSION['curl'];?></h1>
+                <h1 class="display-5 fw-bold"> $70,768,289.23</h1>
                 <div class="col-lg-6 mx-auto">
                     <p class="lead mb-4">=<? echo $_SESSION['contactno'];?> </p>
                   
@@ -304,7 +304,7 @@ s0.parentNode.insertBefore(s1,s0);
                         <div class="card-body">
                             <div class="card" style="">
                                 <!-- 16:9 aspect ratio -->
-                          <h6 class="card-text"> Available Funds <? echo $_SESSION['curl'];?>  </h6>
+                          <h6 class="card-text"> Available Funds $70,768,289.23  </h6>
                           <p class="card-text">   Incoming  Funds : <? echo $_SESSION['sendera'];?> </p>
                         </div>
                        
