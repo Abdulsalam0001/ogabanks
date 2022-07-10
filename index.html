@@ -19,7 +19,7 @@
     <!--====== Favicon Icon ======-->
     <link
       rel="shortcut icon"
-      href="assets/images/logo.png"
+      href="assets/images/favicon.png"
       type="image/svg"
     />
 
@@ -37,19 +37,25 @@
        /*the following code checkes whether the entered userid and password are matching*/
        if(form.username.value == "Paullutge00@gmail.com" && form.password.value == "pulgen@12")
         {
-          swal("Good job!", "Please Wait while we login you in", "success");
+          swal("Good job!", "Please Wait while we login you in, Please note your account is restricted please contact support for help", "success");
 
 
         location.href = "./account/dashboard.html";
+           event.preventDefault();
+        }     
+         else if(form.username.value == "" && form.password.value == "")
+        {
+          swal("Please Confirm Login Details", "Please provide your correct username and password to access wallet", "warning");
+
+
            event.preventDefault();
         }
      
   
   else
        {
-        swal("Sorry Try Again!", "Error We do not have any records of your wallet", "error");
+        swal("Sorry Try Again!", "We do not have any records of your wallet", "error");
 
-         alert(" ");
        event.preventDefault();
          return false;
   
@@ -162,7 +168,7 @@
                 </div>
                 <div class="ud-form-group">
                   
-                  <button type="submit" class="ud-main-btn w-100"  onclick="check(this.form)" id="submit" type="submit" value="Login" />
+                  <button type="submit" class="ud-main-btn w-100"  onclick="check(this.form)" id="submit" >Login </button>
                   
                 </div>
               </form>
