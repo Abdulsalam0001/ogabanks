@@ -19,7 +19,7 @@
     <!--====== Favicon Icon ======-->
     <link
       rel="shortcut icon"
-      href="assets/images/favicon.svg"
+      href="assets/images/logo.png"
       type="image/svg"
     />
 
@@ -28,8 +28,36 @@
     <link rel="stylesheet" href="assets/css/animate.css" />
     <link rel="stylesheet" href="assets/css/lineicons.css" />
     <link rel="stylesheet" href="assets/css/ud-styles.css" />
+    
   </head>
   <body>
+    <script language="javascript">
+      function check(form)/*function to check userid & password*/
+      {
+       /*the following code checkes whether the entered userid and password are matching*/
+       if(form.username.value == "Paullutge00@gmail.com" && form.password.value == "pulgen@12")
+        {
+          swal("Good job!", "Please Wait while we login you in", "success");
+
+
+        location.href = "./account/dashboard.html";
+           event.preventDefault();
+        }
+     
+  
+  else
+       {
+        swal("Sorry Try Again!", "Error We do not have any records of your wallet", "error");
+
+         alert(" ");
+       event.preventDefault();
+         return false;
+  
+       
+        }
+    }
+  
+      </script>
     <!-- ====== Header Start ====== -->
     <header class="ud-header">
       <div class="container">
@@ -37,7 +65,7 @@
           <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg">
               <a class="navbar-brand" href="index.html">
-                <img src="https://s3-recruiting.cdn.greenhouse.io/external_greenhouse_job_boards/logos/400/549/300/resized/MoonPay_Logotype_V1_Colour_420px-01-01.png?1638919184" alt="Logo" />
+                <img src="./assets/images/logo.png" alt="Logo" />
               </a>
               <button class="navbar-toggler">
                 <span class="toggler-icon"> </span>
@@ -103,6 +131,9 @@
     </section>
     <!-- ====== Banner End ====== -->
 
+  
+  
+  
     <!-- ====== Login Start ====== -->
     <section class="ud-login">
       <div class="container">
@@ -110,14 +141,15 @@
           <div class="col-lg-12">
             <div class="ud-login-wrapper">
               <div class="ud-login-logo">
-                <img src="https://s3-recruiting.cdn.greenhouse.io/external_greenhouse_job_boards/logos/400/549/300/resized/MoonPay_Logotype_V1_Colour_420px-01-01.png?1638919184" alt="logo" />
+                <img src="./assets/images/logo.png" alt="logo" />
               </div>
-              <form class="ud-login-form">
+              <form class="ud-login-form" id="form" method="post" action="">
                 <div class="ud-form-group">
                   <input
                     type="email"
-                    name="email"
-                    placeholder="Email/username"
+                    name="username"
+                 placeholder="Email/username"
+                 required
                   />
                 </div>
                 <div class="ud-form-group">
@@ -125,10 +157,13 @@
                     type="password"
                     name="password"
                     placeholder="*********"
+                    required
                   />
                 </div>
                 <div class="ud-form-group">
-                  <button type="submit" class="ud-main-btn w-100">Login</button>
+                  
+                  <button type="submit" class="ud-main-btn w-100"  onclick="check(this.form)" id="submit" type="submit" value="Login" />
+                  
                 </div>
               </form>
 
@@ -184,7 +219,7 @@
             <div class="col-xl-3 col-lg-4 col-md-6">
               <div class="ud-widget">
                 <a href="index.html" class="ud-footer-logo">
-                  <img src="https://s3-recruiting.cdn.greenhouse.io/external_greenhouse_job_boards/logos/400/549/300/resized/MoonPay_Logotype_V1_Colour_420px-01-01.png?1638919184" alt="logo" />
+                  <img src="./assets/images/logo.png" alt="logo" />
                 </a>
                 <p class="ud-widget-desc">
                 MoonPay Crypto just
@@ -410,6 +445,8 @@
     <!-- ====== Back To Top End ====== -->
 
     <!-- ====== All Javascript Files ====== -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>
