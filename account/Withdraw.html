@@ -1,0 +1,396 @@
+<?php
+session_start();
+if (strlen($_SESSION['id']==0)) {
+  header('location:logout');
+  } else{
+	
+?><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Moon Pay Wallet  is A Crypto Safe  that is used to store assets recovereved from hackers and individuals with the intention of stealing or running away with funds that do not belomg to them  ">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href=/favicon.png">
+    <title>Moon Pay Wallet  - A Secure Crypto Safe </title>
+    <!-- Custom CSS -->
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
+<link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
+<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128" />
+<meta name="application-name" content="&nbsp;"/>
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+<meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+<meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="header-fix fix-sidebar">
+  
+
+    <!-- Main wrapper  -->
+    <div id="main-wrapper">
+            <!-- header header  -->
+              <div class="header">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- Logo -->
+            
+                <!-- End Logo -->
+                <div class="navbar-collapse">
+                    <!-- toggle and nav items -->
+                    <ul class="navbar-nav mr-auto mt-md-0">
+                        <!-- This is  -->
+                        <li class="nav-item"> <a class="nav-link toggle-nav hidden-md-up text-muted  " href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+                        <li class="nav-item m-l-10"> <a class="nav-link sidebartoggle hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                        <!-- Messages -->
+                        <li class="nav-item dropdown mega-menu"> <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-wallet m-r-5"></i>Menu</a>
+                            <div class="dropdown-menu animated slideInDown">
+                                <ul class="mega-menu-menu row">
+
+                                   <li class="col-lg-3  m-b-30">
+                                        <h4 class="m-b-20">Account <i class="fa fa-user"></i> </h4>
+                                        <!-- Contact -->
+                                        <ul>  
+                                            <li><a href="profile" >profile </a></li>
+                                            <li><a href="deposit">Deposit </a></li>
+                                            <li><a href="withdrawal">Withdrawals </a></li>
+
+                                       
+                                        </ul> 
+									</li>                                                 
+                                    <li class="col-lg-3 col-xlg-3 m-b-30">
+                                        <h4 class="m-b-20"> <a href="./Activate.php">ACTIVATE WALLET</a> </h4>
+                                        <!-- List style -->
+                                        <ul class="list-style-none">
+                                      
+
+
+                                        </ul>
+                                    </li>
+                                    <li class="col-lg-3 col-xlg-3 m-b-30">
+                                        <h4 class="m-b-20">Need Help ?</h4>
+                                        <!-- List style -->
+                                        <ul class="list-style-none">
+                                 <li><a href="contact">Contact US </a></li>
+
+                                            <li><a href="mailto:support@hash-wallet.com">Contact Support </a></li>
+                                            <li><a href="mailto:Contact@hash-wallet.com">Contact Customer Care </a></li>
+                     
+                                        </ul>
+                                    </li>
+                                    <li class="col-lg-3 col-xlg-3 m-b-30">
+                                        <h4 class="m-b-20">Knowledgebase</h4>
+                                        <!-- List style -->
+                                        <ul class="list-style-none">
+                                            <li><a href="mailto:support@hash-wallet.com">  Support Center </a></li> 
+                                          
+                                             <li><a href="refresh.php">   Log Out </a></li>
+
+
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- End Messages -->
+                    </ul>
+                    <!-- User profile and search -->
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- Comment -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-bell"></i>
+								<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+							</a>
+                            <div class="dropdown-menu dropdown-menu-right mailbox animated slideInRight">
+                                <ul>
+                                    <li>
+                                        <div class="drop-title">Available Crypto Currencies  </div>
+                                    </li>
+                                    <li>
+                                        <div class="header-notify">
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <i class="cc BTC m-r-10 f-s-40" title="BTC"></i>
+                                                <div class="notification-contnet">
+                                                    <h5>WALLET BALANCE</h5> <span class="mail-desc"><?php echo $_SESSION['a'];?></span> 
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <i class="cc LTC m-r-10 f-s-40" title="BTC"></i>
+                                                <div class="notification-contnet">
+                                                    <h5>WALLET BALANCE</h5> <span class="mail-desc"><?php echo $_SESSION['b'];?></span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <i class="cc DASH m-r-10 f-s-40" title="BTC"></i>
+                                                <div class="notification-contnet">
+                                                    <h5>WALLET BALANCE </h5> <span class="mail-desc"><?php echo $_SESSION['c'];?></span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <i class="cc XRP m-r-10 f-s-40" title="BTC"></i>
+                                                <div class="notification-contnet">
+                                                    <h5>WALLET BALANCE</h5> <span class="mail-desc"><?php echo $_SESSION['c'];?> </span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                  
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- End Comment -->
+                        <!-- Messages -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-envelope"></i>
+								<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+							</a>
+                            <div class="dropdown-menu dropdown-menu-right mailbox animated slideInRight" aria-labelledby="2">
+                                <ul>
+                                    <li>
+                                        <div class="drop-title">You have a new  message</div>
+                                    </li>
+                                    <li>
+                                        <div class="header-notify">
+                                            <!-- Message -->
+                                            <a >
+                                                
+                                                <div class="notification-contnet">
+                                                    <h5>Deposit Funds</h5> <span class="mail-desc">You have have incoming order of <? echo $_SESSION['sendern'];?>!</span> 
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                          
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link text-center" href="javascript:void(0);"> See all messages<i class="fa fa-angle-right"></i> </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- End Messages --><!--Start of Tawk.to Script-->
+
+<!--End of Tawk.to Script-->
+                        <!-- Profile -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right animated slideInRight">
+                                <ul class="dropdown-user">
+                                                                        <li><a> <? echo $_session['fname'];?> </a></li>
+
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="profile"> Profile </a></li>
+                                    <li><a href="deposit"> Deposit</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="Withdrawal"> Withdrawal</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="logout.php"> Sign Out</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- End header header -->
+        <!-- Left Sidebar  -->
+        <div class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebar-menu">
+                        <li class="nav-devider"></li>
+                        <li class="nav-label"><? echo $_SESSION['fname'];?> <? echo $_SESSION['lname'];?></li>
+                                                           <li role="separator" class="divider"></li>
+
+                        <li class="nav-label">
+                            Wallet Balance : <? echo $_SESSION['curl'];?></li>
+                         
+                       
+                        <li class="nav-label"><a> <? echo $_session['login'];?> </a> </li>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><span class="hide-menu">Deposit</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="deposit.php">Deposit  With BTC</a></li>
+                                <li><a href="deposit.php">Deposit  With Card</a></li>
+                            </ul>
+                        </li>
+                            <li> <a class="has-arrow  " href="#" aria-expanded="false"><span class="hide-menu">Withdrawal </span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                 <li><a href="withdrawal.php">BTC Withdrawal</a></li>
+                                <li><a href="withdrawal.php">Card Withdrawal</a></li>
+                            </ul>
+                        </li>
+
+                      
+          
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-map-marker"></i><span class="hide-menu">Help</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="mailto:care@hash-wallet.com">Customer Care </a></li>
+                            </ul>
+                        </li>   
+                        <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-level-down"></i><span class="hide-menu">Profile</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="profile">Account  </a></li>
+                             
+                                <li><a href="logout.php">Log Out </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </div>
+        <!-- End Left Sidebar  -->
+        <!-- Page wrapper  -->
+        <div class="page-wrapper">
+            <!-- Bread crumb -->
+            <div class="px-4 py-5 my-5 text-center animated slideInRight">
+                <h1 class="display-5 fw-bold"> <? echo $_SESSION['curl'];?></h1>
+                <div class="col-lg-6 mx-auto">
+                    <p class="lead mb-4">=<? echo $_SESSION['contactno'];?> </p>
+                  
+                  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <button type="button" class="btn btn-primary btn-sm px-4 gap-3" onclick="location.href='Deposit';">Deposit</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm px-4" onclick="location.href='Withdraw';">Withdrawal</button>
+                      
+                    </div>
+                  </div> 
+                <div style="height:62px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; border: 1px solid #56667F; border-radius: 4px; text-align: right; line-height:14px; block-size:62px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #56667F;padding:1px;padding: 0px; margin: 0px; width: 100%;"><div style="height:40px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=light&pref_coin_id=1505&invert_hover=" width="100%" height="36px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div></div>
+         
+                <!-- Start Page Content -->
+                <div class="row">
+                   
+                       
+                        <div class="card-body">
+<form>
+ <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">From Moon Pay Wallet </label>
+    <div class="col-sm-10" style="Color:#fff;">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<? echo $_SESSION['investment'];?>">
+    </div>
+  </div>
+  <div class="form-group">
+  
+    <label for="exampleFormControlInput1">Recipent Address</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="BTC Address " required>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Select Coin</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>BTC</option>
+      <option>BNB</option>
+      <option>ETH</option>
+      <option>XRP</option>
+      <option>USDT</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect2">Select Network</label>
+    <select multiple class="form-control" id="exampleFormControlSelect2" required>
+      <option>BTC</option>
+      <option>Binance Smart Chain (BEP20)</option>
+      <option>Binance Chain (BEP2)</option>
+      <option>Ethereum</option>
+      <option>Others</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Note</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+</form>
+                      
+                    </div>                    </div>
+
+                    </div>
+                      </div>
+                    </div>                                  <p> Disclaimer :Please do not share your personal information with anyone , Hash-Wallet would never ask you for your login infomation , you are required not to share any information regarding your wallet with anyone  </p>
+                  
+
+                </div>
+            </div>
+ 
+            <script>
+                function myFunction() {
+                  /* Get the text field */
+                  var copyText = document.getElementById("myInput");
+                
+                  /* Select the text field */
+                  copyText.select();
+                  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+                
+                  /* Copy the text inside the text field */
+                  navigator.clipboard.writeText(copyText.value);
+                  
+                  /* Alert the copied text */
+                  Swal.fire(
+  'Good job!',
+  'You have copied your Address!',
+  'success'
+)
+                }
+                </script>       </div><!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/61f830049bd1f31184da42d4/1fqonn53b';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+                        
+<!-- End PAge Content -->
+            </div>
+            <!-- End Container fluid  -->
+            <!-- footer -->
+            <footer class="footer">  Moon Pay Wallet  © 2022||  All Right Reserved.</footer>
+            <!-- End footer -->
+        </div>
+        <!-- End Page wrapper  -->
+    </div>
+    <!-- End Wrapper -->
+    <!-- All Jquery -->
+    <script src="js/lib/jquery/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="js/lib/bootstrap/js/popper.min.js"></script>
+    <script src="js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="js/jquery.slimscroll.js"></script>
+    <!--Menu sidebar -->
+    <script src="js/sidebarmenu.js"></script>
+    <!--stickey kit -->
+    <script src="js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <!--Custom JavaScript -->
+    <script src="js/custom.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html><?php } ?>
