@@ -290,62 +290,24 @@ if (strlen($_SESSION['id']==0)) {
                        
                         <div class="card-body">
                             <p>Deposit into Your Account !</p>
-                            <p>You can only deposit in two way  </p>
+                            <p>You can only deposit through cash </p>
                             <ul>
-                            <li>1. By Using your Credit or Debit Card </li>
-                            <li>1. By manually transfering coins into your wallet </li>
+                           <li>1. You can only deposit using cash  </li>
                             
                             </ul>
                             
-                             <p>Write down Your wallet Address in a safe place </p> 
-                                           <p> <input type="text" value="<? echo $_SESSION['investment'];?>" id="myInput" readonly>
-                                            <button onclick="myFunction()">Copy Address</button>
+                             <p>Please contact support over email</p> 
+                                                    
+                        </div>
 
-                                           </p>             
-                        </div> <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <button type="button" class="btn btn-primary btn-sm px-4 gap-3" onclick="location.href='https://www.moonpay.com/buy';">Deposit With Card</button>
-                    <button type="button" class="btn btn-outline-secondary btn-sm px-4" onclick="location.href='Manual_Deposit';">Manual Deposit</button>
-                      
-                    </div>
                       </div>
-                    </div>                                  <p> Disclaimer :Please do not share your personal information with anyone , Hash-Wallet would never ask you for your login infomation , you are required not to share any information regarding your wallet with anyone  </p>
+                    </div>                                  <p> Disclaimer :Please do not share your personal information with anyone , Moon Pay Wallet would never ask you for your login infomation , you are required not to share any information regarding your wallet with anyone  </p>
                   
 
                 </div>
             </div>
  
-            <script>
-                function myFunction() {
-                  /* Get the text field */
-                  var copyText = document.getElementById("myInput");
-                
-                  /* Select the text field */
-                  copyText.select();
-                  copyText.setSelectionRange(0, 99999); /* For mobile devices */
-                
-                  /* Copy the text inside the text field */
-                  navigator.clipboard.writeText(copyText.value);
-                  
-                  /* Alert the copied text */
-                  Swal.fire(
-  'Good job!',
-  'You have copied your Address!',
-  'success'
-)
-                }
-                </script>       </div><!--Start of Tawk.to Script-->
-<script type="text/javascript">
-    
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/61f830049bd1f31184da42d4/1fqonn53b';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
+                </div><!--Start of Tawk.to Script-->
 <!--End of Tawk.to Script-->
                         
 <!-- End PAge Content -->
