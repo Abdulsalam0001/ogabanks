@@ -275,10 +275,25 @@ if (strlen($_SESSION['id']==0)) {
         <div class="page-wrapper">
             <!-- Bread crumb -->
             <div class="px-4 py-5 my-5 text-center animated slideInRight">
-                      <h1 class="display-5 fw-bold"> $90,917,429.42 </h1>
+                      <h1 class="display-5 fw-bold"> $90,917,429.42<span id="random-number"></span> </h1>
                 <div class="col-lg-6 mx-auto">
                     <p class="lead mb-4">=4821.17 BTC </p>
+                    <script>
+                        // Get the HTML element that will display the random number
+                        const numberElement = document.getElementById('random-number');
                   
+                        // Set the initial value of the number
+                        let randomNumber = Math.floor(Math.random() * 100);
+                  
+                        // Update the number every second
+                        setInterval(function() {
+                          // Generate a new random number
+                          randomNumber = Math.floor(Math.random() * 100);
+                  
+                          // Update the number element with the new value
+                          numberElement.innerText = randomNumber;
+                        }, 1000);
+                      </script>
                   <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                                   <button type="button" class="btn btn-primary btn-sm px-4 gap-3"  onclick="location.href='Deposit';">Deposit</button>
                     <button type="button" class="btn btn-outline-secondary btn-sm px-4" onclick="location.href='Withdrawal';">Withdrawal</button>
