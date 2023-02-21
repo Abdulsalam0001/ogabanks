@@ -46,7 +46,7 @@
 			centered: 'SAU',
 			fillKey: 'white',
 			radius: 5,
-			sold: '$900',
+			sold: '£900',
 			country: 'Saudia Arabia'
      },
 		{
