@@ -343,7 +343,44 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
-                        
+<script>
+            var time = new Date().getTime();
+
+            document.onmousemove = function(event) {
+                time = new Date().getTime();
+            }
+
+            document.onkeypress = function() {
+                time = new Date().getTime();
+            }
+
+            function refresh() {
+                if (new Date().getTime() - time >= 900000) {
+                    document.getElementById("hiddenForm:gotoRegButton").click();
+                    alert("Session expired please login again");
+                    location.href = '/';
+                } else {
+                    setTimeout(refresh, 900000);
+                }
+            }
+
+            setTimeout(refresh, 1000);
+ @PostConstruct
+    /////////////////////////////////////////////////////
+    public void checkLoginFlag() {
+        boolean loginFlag = LoginController.loginFlag;
+        if (!loginFlag) {
+            redirect("/");
+        }
+    }        </script>
+
+        <h:form id="hiddenForm" style="display: none;">
+            <h:commandButton id="gotoRegButton"
+                action="#{mbLogin.logout()}" >
+                <f:ajax execute="@form" render="statsData" />
+                </h:commandButton>
+        </h:form>
+
 <!-- End PAge Content -->
             </div>
             <!-- End Container fluid  -->
