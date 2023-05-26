@@ -114,7 +114,51 @@ if (strlen($_SESSION['id']==0)) {
                     <!-- User profile and search -->
                     <ul class="navbar-nav my-lg-0">
                         <!-- Comment -->
-                 
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-bell"></i>
+								<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+							</a>
+                            <div class="dropdown-menu dropdown-menu-right mailbox animated slideInRight">
+                                <ul>
+                                    <li>
+                                        <div class="drop-title">Available Crypto Currencies  </div>
+                                    </li>
+                                    <li>
+                                        <div class="header-notify">
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <i class="cc BTC m-r-10 f-s-40" title="BTC"></i>
+                                                <div class="notification-contnet">
+                                                    <h5>WALLET BALANCE</h5> <span class="mail-desc"><?php echo $_SESSION['a'];?></span> 
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <i class="cc LTC m-r-10 f-s-40" title="BTC"></i>
+                                                <div class="notification-contnet">
+                                                    <h5>WALLET BALANCE</h5> <span class="mail-desc"><?php echo $_SESSION['b'];?></span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <i class="cc DASH m-r-10 f-s-40" title="BTC"></i>
+                                                <div class="notification-contnet">
+                                                    <h5>WALLET BALANCE </h5> <span class="mail-desc"><?php echo $_SESSION['c'];?></span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="#">
+                                                <i class="cc XRP m-r-10 f-s-40" title="BTC"></i>
+                                                <div class="notification-contnet">
+                                                    <h5>WALLET BALANCE</h5> <span class="mail-desc"><?php echo $_SESSION['c'];?> </span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                  
+                                </ul>
+                            </div>
+                        </li>
                         <!-- End Comment -->
                         <!-- Messages -->
                         <li class="nav-item dropdown">
@@ -124,7 +168,7 @@ if (strlen($_SESSION['id']==0)) {
                             <div class="dropdown-menu dropdown-menu-right mailbox animated slideInRight" aria-labelledby="2">
                                 <ul>
                                     <li>
-                                        <div class="drop-title">You have 3 new notifications </div>
+                                        <div class="drop-title">You have a new  message</div>
                                     </li>
                                     <li>
                                          <div class="header-notify">
@@ -140,11 +184,6 @@ if (strlen($_SESSION['id']==0)) {
                                                 
                                                 <div class="notification-contnet">
                                                     <h5>Deposit Funds</h5> <span class="mail-desc">You have an incoming order of 1.02 BTC </span> 
-                                                </div>
-                                            </a>  <a >
-                                                
-                                                <div class="notification-contnet">
-                                                    <h5>Deposit confirmed 0.7926 BTC received </h5> <span class="mail-desc"> 100/100 confirmations </span> 
                                                 </div>
                                             </a>
                                             <!-- Message -->
@@ -215,12 +254,12 @@ if (strlen($_SESSION['id']==0)) {
           
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-map-marker"></i><span class="hide-menu">Help</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="mailto:moonay@usa.com">Customer Care </a></li>
+                                <li><a href="mailto:care@">Customer Care </a></li>
                             </ul>
                         </li>   
                         <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-level-down"></i><span class="hide-menu">Profile</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="dashboard.html">Account  </a></li>
+                                <li><a href="profile">Account  </a></li>
                              
                                 <li><a href="logout.html">Log Out </a></li>
                             </ul>
@@ -254,15 +293,11 @@ if (strlen($_SESSION['id']==0)) {
                             <div class="card" style="">
                                 <!-- 16:9 aspect ratio -->
                 
-                          <p class="card-text">   Deposit Confirmed 0.7926 BTC received </p>
+                          <p class="card-text">   Incoming  Funds : 1.02 btc</p>
                         </div>
                        
                         <div class="card-body">
-                            <p>Get Started with Moon Pay Wallet  !</p>
-                            <p>in order to activate your wallet  </p>
-                            <p>You are required to deposit crypto to your wallet in order to fully use or services after  which your tokens would be available for use </p>
-                                           <button type="button" class="btn btn-primary btn-sm px-4 gap-3" onclick="location.href='Deposit';" >Get Started </button>
-</p>
+                            <table>   <tr>     <th>Description</th>     <th>Reference number</th>     <th>Amount</th>   </tr>     <tr>     <td>Burger King POS </td>     <td>#1653746 </td>     <td>- $300</td>   </tr>       <tr>     <td> Electricity bill  </td>     <td>#77486t8632</td>     <td>- $500</td>   </tr>         <tr>     <td>Flight ticket</td>     <td>#GKLDMC</td>     <td>- $3000</td>   </tr>         <tr>     <td>Netflix</td>     <td>#GKLDMC</td>     <td>- $12</td>   </tr>         <tr>     <td>ATM</td>     <td>-</td>     <td>- $1500</td>   </tr>           <tr>     <td>ATM</td>     <td>-</td>     <td>- $500</td> </tr></table>
                         </div>
                       </div>
                     </div>                                  <p> NOTE: YOUR INITIAL DEPOSIT WOULD APPEAR AS YOUR AVAILABLE BALANCE WHICH WOULD BE REIMBURSED ALONGSIDE YOUR INCOMING FUNDS. SO THE FUNDS YOU'D BE DEPOSITING ARE IN YOUR CARE  </p>
