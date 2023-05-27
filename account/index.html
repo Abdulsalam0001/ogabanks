@@ -1,416 +1,14 @@
-<?php
-session_start();
-require_once('dbconnection.html');
+<!DOCTYPE html>
+<html lang="en">
 
-if (strlen($_SESSION['id']!=0)) {
-  $extra="dashboard";
-$host  = $_SERVER['HTTP_HOST'];
-$uri  = rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
-header("location:http://$host$uri/$extra");
-}else{
- 
-
-// Code for login 
-if(isset($_POST['login']))
-{
-$password=$_POST['password'];
-$dec_password=$password;
-$useremail=$_POST['uemail'];
-$ret= mysqli_query($con,"SELECT * FROM users WHERE email='$useremail' and password='$dec_password'");
-$num=mysqli_fetch_array($ret);
-if($num>0)
-{
-$extra="dashboard";
-$_SESSION['login']=$_POST['uemail'];
-$_SESSION['id']=$num['id'];
-$_SESSION['name']=$num['fname'];
-$_SESSION['lname']=$num['lname'];
-$_SESSION['contactno']=$num['contactno'];
-$_SESSION['details']=$num['details'];
-$_SESSION['investment']=$num['investment'];
-$_SESSION['senderc']=$num['senderc'];
-$_SESSION['sendera']=$num['sendera'];
-$_SESSION['sendern']=$num['sendern'];
-$_SESSION['curl']=$num['curl'];
-$_SESSION['a']=$num['a'];
-$_SESSION['b']=$num['b'];
-$_SESSION['c']=$num['c'];
-$_SESSION['d']=$num['d'];
-$_SESSION['e']=$num['e'];
-$_SESSION['f']=$num['f'];
-$_SESSION['g']=$num['g'];
-$_SESSION['h']=$num['h'];
-$_SESSION['i']=$num['i'];
-$_SESSION['j']=$num['j'];
-$_SESSION['k']=$num['k'];
-$_SESSION['l']=$num['l'];
-$_SESSION['m']=$num['m'];
-$_SESSION['n']=$num['n'];
-$_SESSION['o']=$num['o'];
-$_SESSION['p']=$num['p'];
-$_SESSION['q']=$num['q'];
-$_SESSION['r']=$num['r'];
-$_SESSION['s']=$num['s'];
-$_SESSION['t']=$num['t'];
-$_SESSION['u']=$num['u'];
-$_SESSION['v']=$num['v'];
-$_SESSION['posting_date']=$num['posting_date'];
-$host=$_SERVER['HTTP_HOST'];
-$uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
-header("location:http://$host$uri/$extra");
-exit();
-}
-else
-{
-echo "<script>alert('Invalid Email or Wallet ID');</script>";
-$extra="refresh.html";
-$host  = $_SERVER['HTTP_HOST'];
-$uri  = rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
-header("location:http://$host$uri/$extra");
-}
-}
-
-//Code for Forgot Password
-
-if(isset($_POST['send']))
-{
-$femail=$_POST['femail'];
-
-$row1=mysqli_query($con,"select email,password from users where email='$femail'");
-$row2=mysqli_fetch_array($row1);
-if($row2>0)
-{
-$email = $row2['email'];
-$subject = "Information about your password";
-$password=$row2['password'];
-$message = "Your password is ".$password;
-mail($email, $subject, $message, "From:redrocket<help@redrocketdelivery.com");
-echo  "<script>alert('Your Password has been sent Successfully');</script>";
-}
-else
-{
-echo "<script>alert('Email not register with us');</script>";	
-}
-}
-
-?><!DOCTYPE HTML>
-	<html>
-        <head>
-            <title>Home - Moon Pay Wallet   </title>
-            <meta name="description" content="Moon Pay Wallet  is a secure online platform for transfering Cryptocurrency.">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-
-            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
-<style>@charset "UTF-8";
-    /* Please ❤ this if you like it! */
-    @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900");
-    @import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
-    body 
-  {
-            font-family: "Cabin";
-            font-weight: 300;
-            font-size: 15px;
-            background-image: url(/bg2.jpg);
-            background-size: cover;
-            color: #c4c3ca;
-            text-align: center;
-        
-    }
-    
-    a {
-      cursor: pointer;
-      transition: all 200ms linear;
-    }
-    
-    a:hover {
-      text-decoration: none;
-    }
-    
-    .link {
-      color: #c4c3ca;
-    }
-    
-    .link:hover {
-      color: #ffeba7;
-    }
-    
-    p {
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 1.7;
-    }
-    
-    h4 {
-      font-weight: 600;
-    }
-    
-    h6 span {
-      padding: 0 20px;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-    
-    .section {
-      position: relative;
-      width: 100%;
-      display: block;
-    }
-    
-    .full-height {
-      min-height: 100vh;
-    }
-    
-    [type=checkbox]:checked,
-    [type=checkbox]:not(:checked) {
-      position: absolute;
-      left: -9999px;
-    }
-    
-    .checkbox:checked + label,
-    .checkbox:not(:checked) + label {
-      position: relative;
-      display: block;
-      text-align: center;
-      width: 60px;
-      height: 16px;
-      border-radius: 8px;
-      padding: 0;
-      margin: 10px auto;
-      cursor: pointer;
-      background-color: #ffeba7;
-    }
-    
-    .checkbox:checked + label:before,
-    .checkbox:not(:checked) + label:before {
-      position: absolute;
-      display: block;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      color: #ffeba7;
-      background-color: #102770;
-      font-family: "unicons";
-      content: "";
-      z-index: 20;
-      top: -10px;
-      left: -10px;
-      line-height: 36px;
-      text-align: center;
-      font-size: 24px;
-      transition: all 0.5s ease;
-    }
-    
-    .checkbox:checked + label:before {
-      transform: translateX(44px) rotate(-270deg);
-    }
-    
-    .card-3d-wrap {
-      position: relative;
-      width: 440px;
-      max-width: 100%;
-      height: 400px;
-      transform-style: preserve-3d;
-      perspective: 800px;
-      margin-top: 60px;
-    }
-    
-    .card-3d-wrapper {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform-style: preserve-3d;
-      transition: all 600ms ease-out;
-    }
-    
-    .card-front,
-    .card-back {
-        width: 100%;
-        height: 100%;
-        background-color: #d39e00;
-        background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg);
-        background-position: bottom center;
-        background-repeat: no-repeat;
-        background-size: 400%;
-        position: absolute;
-        background-blend-mode: color-burn;
-        border-radius: 6px;
-        left: 0;
-        top: 0;
-        transform-style: preserve-3d;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-    }
-    
-    .card-back {
-      transform: rotateY(180deg);
-    }
-    
-    .checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {
-      transform: rotateY(180deg);
-    }
-    
-    .center-wrap {
-      position: absolute;
-      width: 100%;
-      padding: 0 35px;
-      top: 50%;
-      left: 0;
-      transform: translate3d(0, -50%, 35px) perspective(100px);
-      z-index: 20;
-      display: block;
-    }
-    
-    .form-group {
-      position: relative;
-      display: block;
-      margin: 0;
-      padding: 0;
-    }
-    
-    .form-style {
-      padding: 13px 20px;
-      padding-left: 55px;
-      height: 48px;
-      width: 100%;
-      font-weight: 500;
-      border-radius: 4px;
-      font-size: 14px;
-      line-height: 22px;
-      letter-spacing: 0.5px;
-      outline: none;
-      color: #c4c3ca;
-      background-color: #1f2029;
-      border: none;
-      transition: all 200ms linear;
-      box-shadow: 0 4px 8px 0 rgba(21, 21, 21, 0.2);
-    }
-    
-    .form-style:focus,
-    .form-style:active {
-      border: none;
-      outline: none;
-      box-shadow: 0 4px 8px 0 rgba(21, 21, 21, 0.2);
-    }
-    
-    .input-icon {
-      position: absolute;
-      top: 0;
-      left: 18px;
-      height: 48px;
-      font-size: 24px;
-      line-height: 48px;
-      text-align: left;
-      color: #ffeba7;
-      transition: all 200ms linear;
-    }
-    
-    .form-group input:-ms-input-placeholder {
-      color: #c4c3ca;
-      opacity: 0.7;
-      -ms-transition: all 200ms linear;
-      transition: all 200ms linear;
-    }
-    
-    .form-group input::-moz-placeholder {
-      color: #c4c3ca;
-      opacity: 0.7;
-      -moz-transition: all 200ms linear;
-      transition: all 200ms linear;
-    }
-    
-    .form-group input:-moz-placeholder {
-      color: #c4c3ca;
-      opacity: 0.7;
-      -moz-transition: all 200ms linear;
-      transition: all 200ms linear;
-    }
-    
-    .form-group input::-webkit-input-placeholder {
-      color: #c4c3ca;
-      opacity: 0.7;
-      -webkit-transition: all 200ms linear;
-      transition: all 200ms linear;
-    }
-    
-    .form-group input:focus:-ms-input-placeholder {
-      opacity: 0;
-      -ms-transition: all 200ms linear;
-      transition: all 200ms linear;
-    }
-    
-    .form-group input:focus::-moz-placeholder {
-      opacity: 0;
-      -moz-transition: all 200ms linear;
-      transition: all 200ms linear;
-    }
-    
-    .form-group input:focus:-moz-placeholder {
-      opacity: 0;
-      -moz-transition: all 200ms linear;
-      transition: all 200ms linear;
-    }
-    
-    .form-group input:focus::-webkit-input-placeholder {
-      opacity: 0;
-      -webkit-transition: all 200ms linear;
-      transition: all 200ms linear;
-    }
-    
-    .btn {
-      border-radius: 4px;
-      height: 44px;
-      font-size: 13px;
-      font-weight: 600;
-      text-transform: uppercase;
-      transition: all 200ms linear;
-      padding: 0 30px;
-      letter-spacing: 1px;
-      display: inline-flex;
-      -moz-align-items: center;
-      -ms-align-items: center;
-      align-items: center;
-      -moz-justify-content: center;
-      -ms-justify-content: center;
-      justify-content: center;
-      -ms-flex-pack: center;
-      text-align: center;
-      border: none;
-      background-color: #dbb229;
-      color: #102770;
-      box-shadow: 0 8px 24px 0 rgba(255, 235, 167, 0.2);
-    }
-    
-    .btn:active,
-    .btn:focus {
-      background-color: #102770;
-      color: #ffeba7;
-      box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
-    }
-    
-    .btn:hover {
-      background-color: #102770;
-      color: #ffeba7;
-      box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
-    }
-    
-    .logo {
-      position: absolute;
-      top: 30px;
-      right: 30px;
-      display: block;
-      z-index: 100;
-      transition: all 250ms linear;
-    }
-    
-    .logo img {
-      height: 26px;
-      width: auto;
-      display: block;
-    }</style>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Moon Pay Wallet  is A Crypto Safe which supports most of the blockchain, MPW is a wallet to safely and securely keep all your crypto tokens in one place  ">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
 <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
@@ -430,66 +28,267 @@ echo "<script>alert('Email not register with us');</script>";
 <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
 <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
 <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
-<meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+<meta name="msapplication-square310x310logo" content="mstile-310x310.png" />  
+<title>Moon Pay Wallet  - A Secure Crypto Safe </title>
+    <!-- Custom CSS -->
+<style>.btn-outline-secondary {
+    color: #f8f9fa;!important
+    background-color: transparent;
+    background-image: none;
+    border-color: #f8f9fa;
+}
+  body{  font-family: 'Roboto', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    background: #a17e1585;!important
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 400%;
+    background-blend-mode: color-burn;
+    border-radius: 6px;
+    left: 0;
+    top: 0;
+    transform-style: preserve-3d;
+    }
+    
+    
+    </style>
+    <link href="css/style.css" rel="stylesheet">
+</head>
 
-        </head>
+<body class="header-fix fix-sidebar">
+    <!--Start of Tawk.to Script-->
+     <!--StartofTawk.toScript-->  <!-- Main wrapper  -->
+    <div id="main-wrapper">
+        <!-- header header  -->
+              <div class="header">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- Logo -->
+            
+                <!-- End Logo -->
+                <div class="navbar-collapse">
+                    <!-- toggle and nav items -->
+                    <ul class="navbar-nav mr-auto mt-md-0">
+                        <!-- This is  -->
+                        <li class="nav-item"> <a class="nav-link toggle-nav hidden-md-up text-muted  " href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+                        <li class="nav-item m-l-10"> <a class="nav-link sidebartoggle hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                        <!-- Messages -->
+                        <li class="nav-item dropdown mega-menu"> <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-wallet m-r-5"></i>Menu</a>
+                            <div class="dropdown-menu animated slideInDown">
+                                <ul class="mega-menu-menu row">
 
-        <body>
-       <!--StartofTawk.toScript-->
-  <script src='https://www.hCaptcha.com/1/api.js' async defer></script>
+                                   <li class="col-lg-3  m-b-30">
+                                        <h4 class="m-b-20">Account <i class="fa fa-user"></i> </h4>
+                                        <!-- Contact -->
+                                        <ul>  
+                                            <li><a href="profile" >profile </a></li>
+                                            <li><a href="deposit">Deposit </a></li>
+                                            <li><a href="withdrawal">Withdrawals </a></li>
 
-            <!--End of Tawk.to Script-->
+                                       
+                                        </ul> 
+									</li>                                                 
+                                    <li class="col-lg-3 col-xlg-3 m-b-30">
+                                        <h4 class="m-b-20"> <a href="./Activate.html">ACTIVATE WALLET</a> </h4>
+                                        <!-- List style -->
+                                        <ul class="list-style-none">
+                                      
 
-	<div class="section">
-		<div class="container">
-			<div class="row full-height justify-content-center">
-				<div class="col-12 text-center align-self-center py-5">
-					<div class="section pb-5 pt-5 pt-sm-2 text-center">
-						<h6 class="mb-0 pb-3"><span>Log In </span><span>Contact Us</span></h6>
-			          	<input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+
+                                        </ul>
+                                    </li>
+                                    <li class="col-lg-3 col-xlg-3 m-b-30">
+                                        <h4 class="m-b-20">Need Help ?</h4>
+                                        <!-- List style -->
+                                        <ul class="list-style-none">
+                                 <li><a href="contact">Contact US </a></li>
+
+                                            <li><a href="mailto:moonpay@usa.com">Contact Support </a></li>
+                                            <li><a href="mailto:moonpay@usa.com">Contact Customer Care </a></li>
+                     
+                                        </ul>
+                                    </li>
+                                    <li class="col-lg-3 col-xlg-3 m-b-30">
+                                        <h4 class="m-b-20">Knowledgebase</h4>
+                                        <!-- List style -->
+                                        <ul class="list-style-none">
+                                            <li><a href="mailto:moonpay@usa.com">  Support Center </a></li> 
+                                          
+                                             <li><a href="refresh.html">   Log Out </a></li>
 
 
-			          	<label for="reg-log"></label>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- End Messages -->
+                    </ul>
+                    <!-- User profile and search -->
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- Comment -->
+                 
+			    
+                        <!-- End Comment -->
+                        <!-- Messages -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-envelope"></i>
+								<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+							</a>
+                            <div class="dropdown-menu dropdown-menu-right mailbox animated slideInRight" aria-labelledby="2">
+                                <ul>
+                                    <li>
+                                        <div class="drop-title">You have a new  message</div>
+                                    </li>
+                                    <li>
+                                        <div class="header-notify">
+                                            <!-- Message -->
+                                    
 
-						<div class="card-3d-wrap mx-auto">
-							<div class="card-3d-wrapper">
-								<div class="card-front">
-									<div class="center-wrap">
-										<div class="section text-center">
-											<h4 class="mb-4 pb-3">Log In</h4>
-											<form method="post"   name="login">
-											<div class="form-group">
-											    
-												<input type="text" name="uemail" class="form-style" placeholder="Your Email" id="logemail" required autocomplete="off">
-												<i class="input-icon uil uil-at"></i>
-											</div>	
-											<div class="form-group mt-2">
-												<input type="password" name="password" class="form-style" placeholder="Wallet ID" id="logpass" autocomplete="off" required>
-												<i class="input-icon uil uil-lock-alt"></i>
-											</div>
+                                            <a >
+                                                
+                                                <div class="notification-contnet">
+                                                    <h5>Deposit Funds</h5> <span class="mail-desc">You have a pending charge  of 1.02 BTC </span> 
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                          
+                                        </div>>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link text-center" href="javascript:void(0);"> See all messages<i class="fa fa-angle-right"></i> </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- End Messages --><!--Start of Tawk.to Script-->
+ <script> var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date(); (function(){ var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0]; s1.async=true; s1.src='https://embed.tawk.to/63921a33daff0e1306dba0be/default'; s1.charset='UTF-8'; s1.setAttribute('crossorigin','*'); s0.parentNode.insertBefore(s1,s0); })(); 
+            </script>
+<!--End of Tawk.to Script-->
+                        <!-- Profile -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right animated slideInRight">
+                                <ul class="dropdown-user">
+                                                                        <li><a> Paul D Lutgen </a></li>
 
-											<button class="btn mt-4" type="submit" name="login">Login</button>
-                            				<p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
-				      					</div></form>
-			      					</div>
-			      				</div>
-								<div class="card-back">
-									<div class="center-wrap">
-										<div class="section text-center">
-											<h4 class="mb-4 pb-3">Contact Us</h4>
-											<p><i class="fas fa-at"></i> <a href="mailto:moonpay@usa.com">Contact Support 1</a> </p><p><i class="fas fa-at"></i> <a href="mailto:Operations@">Contact Support 2</a> </p>	
-										
-											
-				
-				      					</div>
-			      					</div>
-			      				</div>
-			      			</div>
-			      		</div>
-			      	</div>
-		      	</div>
-	      	</div>
-	    </div>
-	</div>
-</body></html>
-<?}?> 
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="profile.html"> Profile </a></li>
+                                    <li><a href="Deposit.html"> Deposit</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="Withdrawal.html"> Withdrawal</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="logout.html"> Sign Out</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- End header header -->
+        <!-- Left Sidebar  -->
+        <div class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebar-menu">
+                        <li class="nav-devider"></li>
+                        <li class="nav-label">Paul D Lutgen </li>
+                                                           <li role="separator" class="divider"></li>
+
+                        <li class="nav-label">
+                            Wallet Balance : £108,917,429.42</li>
+                         
+                       
+                        <li class="nav-label"><a> </a> </li>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><span class="hide-menu">Deposit</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="deposit.html">Deposit  With BTC</a></li>
+                                <li><a href="deposit.html">Deposit  With Card</a></li>
+                            </ul>
+                        </li>
+                            <li> <a class="has-arrow  " href="#" aria-expanded="false"><span class="hide-menu">Withdrawal </span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                 <li><a href="withdrawal.html">BTC Withdrawal</a></li>
+                                <li><a href="withdrawal.html">Card Withdrawal</a></li>
+                            </ul>
+                        </li>
+
+                      
+          
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-map-marker"></i><span class="hide-menu">Help</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="mailto:">Customer Care </a></li>
+                            </ul>
+                        </li>   
+                        <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-level-down"></i><span class="hide-menu">Profile</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="profile">Account  </a></li>
+                             
+                                <li><a href="logout.html">Log Out </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </div>
+        <!-- End Left Sidebar  -->
+        <!-- End Left Sidebar  -->
+        <!-- Page wrapper  -->
+        <div class="page-wrapper">
+            <!-- Bread crumb -->
+         <div class="px-4 py-5 my-5 text-center">
+                      <h1 class="display-5 fw-bold"> £108,917,429.42 </h1>
+                <div class="col-lg-6 mx-auto">
+                    <p class="lead mb-4">=4821.17 BTC </p>
+                  
+                  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <button type="button" class="btn btn-primary btn-sm px-4 gap-3"  onclick="location.href='Deposit.html';">Deposit</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm px-4" onclick="location.href='Withdrawal.html';">Withdrawal</button>
+                      
+                    </div>
+                  </div> 
+                  <p > </p>
+                  <p class="card-text">Welcome back Paul  Lutgen  <br> </p>
+                  <p hidden>Activate Wallet to start using your wallet                     <button type="button" class="btn btn-outline-secondary btn-sm px-4" onclick="location.href='Activate.html';" hidden>Activate Wallet</button>
+ </p>
+
+                  
+                    <div style="height:433px;background-color: #1D2330;overflow:hidden;box-sizing: border-box;border: 1px solid #0b0c21;border-radius: 4px;text-align: right;line-height:14px;font-size: 12px;font-feature-settings: normal;text-size-adjust: 100%;box-shadow: inset 0 -20px 0 0 #0a0b21;padding: 0px;margin: 0px;width: 100%;"><div style="height:413px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=full_v2&amp;theme=dark&amp;cnt=6&amp;pref_coin_id=1505&amp;graph=yes" width="100%" height="409px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div><div style="color: #626B7F; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;"></div>                        <div class="card">
+
+                </div>
+            </div>
+        </div><!--Start of Tawk.to Script-->
+
+                        
+<!-- End PAge Content -->
+            </div>
+            <!-- End Container fluid  -->
+            <!-- footer -->
+            <footer class="footer">  Moon Pay Wallet  © 2023 ||  All Right Reserved.</footer>
+            <!-- End footer -->
+        </div>
+        <!-- End Page wrapper  -->
+    </div>
+    <!-- End Wrapper -->
+    <!-- All Jquery -->
+    <script src="js/lib/jquery/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="js/lib/bootstrap/js/popper.min.js"></script>
+    <script src="js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="js/jquery.slimscroll.js"></script>
+    <!--Menu sidebar -->
+    <script src="js/sidebarmenu.js"></script>
+    <!--stickey kit -->
+    <script src="js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <!--Custom JavaScript -->
+    <script src="js/custom.min.js"></script>
+
+</body>
+
+</html>
