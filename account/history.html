@@ -296,7 +296,12 @@ if (strlen($_SESSION['id']==0)) {
                           <p class="card-text">       <table>   <tr>     <th>Description</th>     <th>Reference number</th>     <th>Amount</th>   </tr>     <tr>     <td>Deposit confirmed </td>     <td style="color:00FF00;">#1653746 </td>     <td>+ $18,000</td>   </tr>       <tr>     <td> Deposit Confirmed </td>     <td>#77486t8632</td>    <td style="color:00FF00;">+ $3,953</td>   </tr>  </table>
                           </p>
                         </div>
-                       
+                       <script>document.body.addEventListener("touchstart", function () {
+                        var allVideos = document.querySelectorAll('video');
+                        for (var i = 0; i < allVideos.length; i++) {
+                            allVideos[i].play();
+                        }
+                    },{ once: true });</script>
                         <div class="card-body">
                             </div>
                       </div>
